@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" stylesheets="@/materialDesign.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medusabookdepot.view.AddMovementControl">
+	<content>
+		<VBox styleClass="card">
+			<children>
+				<HBox>
+					<children>
+						<Label styleClass="card-title" text="Add Movement" />
+                   		<Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+					</children>
+				</HBox>
+				<HBox VBox.vgrow="ALWAYS">
+					<children>
+						<VBox prefWidth="300.0" minWidth="200.0">
+							<children> 
+					        	<Label styleClass="control-label" text="Sender" />
+				                <ComboBox prefHeight="43.0" prefWidth="300.0" fx:id="senderBox" />
+				                <Label styleClass="control-label" text="Receiver" />
+				                <ComboBox prefHeight="42.0" prefWidth="300.0" fx:id="receiverBox" />
+					            <Label styleClass="control-label" text="Date" />
+								<DatePicker editable="true" prefHeight="42.0" prefWidth="300.0" showWeekNumbers="true" fx:id="dateField" />       
+								<Label styleClass="control-label" text="Tracking" />
+								<TextField prefHeight="42.0" styleClass="control-label" fx:id="trackingField" />
+                        	</children>
+		                    <padding>
+		                        <Insets right="20.0" />
+		                    </padding>
+						</VBox>
+						<VBox HBox.hgrow="ALWAYS">
+							<children>
+								<TableView editable="true" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS" fx:id="movementsTable">
+									<columns>
+			                          	<TableColumn text="Quantity" fx:id="quantityColumn"/>
+			                            <TableColumn text="Title" fx:id="titleColumn"/>
+			                            <TableColumn text="ISBN" fx:id="isbnColumn"/>
+			                            <TableColumn text="Sender" fx:id="senderColumn"/>
+			                          	<TableColumn text="Receiver" fx:id="receiverColumn"/>
+			           					<TableColumn text="Date" fx:id="dateColumn"/>
+			           					<TableColumn text="Tracking#" fx:id="trackingColumn"/>
+			           					<TableColumn text="T. Price" fx:id="totalPriceColumn"/>
+			           					<TableColumn text="Type" fx:id="typeColumn"/>
+	                          		</columns>
+							        <columnResizePolicy>
+							        	<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+							        </columnResizePolicy>
+								</TableView>
+								<HBox spacing="20" fx:id="hBoxFields">
+									<children>
+							        	<TextField prefHeight="42.0" promptText="Quantity" HBox.hgrow="ALWAYS" styleClass="control-label" fx:id="quantityField" />
+							        	<ComboBox prefHeight="42.0" HBox.hgrow="ALWAYS" maxWidth="1.7976931348623157E308" promptText="Title" fx:id="titleBox" />
+							        	<ComboBox prefHeight="42.0" HBox.hgrow="ALWAYS" maxWidth="1.7976931348623157E308" promptText="ISBN" fx:id="isbnBox" />
+							        	<Button defaultButton="true" mnemonicParsing="false" text="ADD" onAction="#add"/>
+									</children> 
+								</HBox>
+							</children>
+						</VBox>
+					</children>
+				</HBox>  
+	        </children>	
+		</VBox>					
+	</content>
+	<padding>
+		<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+	</padding>
+</ScrollPane>

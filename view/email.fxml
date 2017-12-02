@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" stylesheets="@/materialDesign.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.medusabookdepot.view.EmailControl">
+	<content>
+		<VBox styleClass="card">
+			<children>
+				<HBox>
+					<children>
+						<Label styleClass="card-title" text="Email" />
+					</children>
+				</HBox>
+				<HBox VBox.vgrow="ALWAYS">
+					<children>
+						<VBox fx:id="vBoxFields">
+							<children> 
+					        	<Label styleClass="control-label" text="To:" />
+				                <TextField fx:id="toField" prefHeight="43.0" prefWidth="300.0" />
+				                <Label styleClass="control-label" text="Subject:" />
+				                <TextField fx:id="subjectField" prefHeight="43.0" prefWidth="300.0" />
+				                <Label styleClass="control-label" text="Attachments:" />
+				                <HBox>
+	                           		<children>
+	                           			<TextField fx:id="attachedField" prefHeight="42.0" prefWidth="300.0" />
+									</children> 
+						   		</HBox>
+						   		<Pane prefHeight="7.0" />
+						   		<Label styleClass="control-label" text="Message:" />
+						   		<TextArea fx:id="messageArea" prefHeight="150.0" prefWidth="300.0" />
+						   		<Pane prefHeight="20.0" />
+                           		<HBox>
+	                           		<children>
+	                           			<Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+								        <Button defaultButton="true" mnemonicParsing="false" onAction="#send" text="SEND" HBox.hgrow="ALWAYS" />
+									</children> 
+						   		</HBox>
+							</children>
+		                    <padding>
+		                        <Insets right="20.0" />
+		                    </padding> 
+						</VBox>
+						<VBox HBox.hgrow="ALWAYS">
+							<children>
+								<ListView fx:id="listView" VBox.vgrow="ALWAYS" />
+								<HBox>
+									<children>
+										<Pane prefWidth="200.0" HBox.hgrow="ALWAYS" />
+										<Button cacheShape="false" centerShape="false" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#addAttachment" scaleShape="false" styleClass="icon-button" text="">
+		                                	<HBox.margin>
+												<Insets top="8.0" />
+											</HBox.margin>
+										</Button>
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+					</children>
+				</HBox>  
+	        </children>	
+		</VBox>					
+	</content>
+	<padding>
+		<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+	</padding>
+</ScrollPane>
